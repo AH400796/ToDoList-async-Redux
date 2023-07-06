@@ -1,12 +1,12 @@
 import { MdClose } from 'react-icons/md';
 import { Wrapper, Text, Checkbox, ButtonStyled } from './Task.styled';
 import { useDispatch } from 'react-redux';
-import { deleteTask, toggleCompleted } from 'redux//tasksSlice';
+import { deleteTask, toggleCompleted } from 'redux/operations';
 
 export default function Task({ task }) {
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteTask(task.id));
-  const handleToggle = () => dispatch(toggleCompleted(task.id));
+  const handleToggle = () => dispatch(toggleCompleted(task));
   return (
     <Wrapper>
       <Checkbox
